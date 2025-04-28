@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Blow up danzas urbanas</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <body>
+    <header>
+        <a href="index.html"><img class="logo" src="imagenes/blow.PNG"></a>
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </button>
+        <ul class="nav-links"> 
+          <li><a href="clases.html">CLASES</a></li>
+          <li><a href="precios.html">PRECIOS</a></li>
+          <li><a href="formacion.html">FORMACION</a></li>
+          <li><a href="testimonios.html">TESTIMONIOS</a></li>
+          <li><a href="https://wa.me/5491140302577" target="_blank">CONTACTO</a></li>
+        </ul>
+    </header>
+    <main>
+      <h2 style="text-align:center;">Contacto</h2>
+  
+      <form action="#" method="post" style="max-width: 600px; margin: auto;">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="ej.: María Perez" required style="width: 100%; padding: 10px; margin-bottom: 20px;">
+  
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="ej.: tuemail@email.com" required style="width: 100%; padding: 10px; margin-bottom: 20px;">
+  
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="ej.: 1123445567" required style="width: 100%; padding: 10px; margin-bottom: 20px;">
+  
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="ej.: Tu mensaje" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
+  
+        
+  
+        <button type="submit" style="width: 100%; background-color: #333; color: white; padding: 15px; font-size: 16px; border: none;">Enviar</button>
+      </form>
+    </main>
+    
+
