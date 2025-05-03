@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
    <title>Blow up danzas urbanas</title>
    <link rel="stylesheet" href="style.css">
+ 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -27,8 +28,71 @@
           <li><a href="https://wa.me/5491140302577" target="_blank">CONTACTO</a></li>
         </ul>
     </header>
-    <main>
-      <h2 style="text-align:center;">Contacto</h2>
+    <main> <BR></BR>
+      <h2 style="text-align:center;">TESTIMONIOS</h2>
+
+
+
+      <div class="slider-container">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje1.jpg"></div></div>
+            <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje2.jpg"></div></div>
+              <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje3.jpg"></div></div>
+                <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje4.jpg"></div></div>
+                  <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje5.jpg"></div></div>
+              <div class="slide"><div class="slide-content"> <img src="imagenes/mensaje6.jpg"></div></div>
+
+        </div>
+      
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+      </div>
+      
+      <script>
+        const track = document.getElementById('sliderTrack');
+        const totalSlides = 6;
+        const visibleSlides = 3;
+        const slideWidth = 100 / visibleSlides;
+        let currentIndex = 0;
+        let autoSlideInterval;
+      
+        function updateSlider() {
+          const offset = -(currentIndex * slideWidth);
+          track.style.transform = `translateX(${offset}%)`;
+        }
+      
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % (totalSlides - visibleSlides + 1);
+          updateSlider();
+          resetAutoSlide();
+        }
+      
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + (totalSlides - visibleSlides + 1)) % (totalSlides - visibleSlides + 1);
+          updateSlider();
+          resetAutoSlide();
+        }
+      
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(() => {
+            nextSlide();
+          }, 4000);
+        }
+      
+        function resetAutoSlide() {
+          clearInterval(autoSlideInterval);
+          startAutoSlide();
+        }
+      
+        // Inicializar
+        updateSlider();
+        startAutoSlide();
+      </script>
+
+
+
+      <h3 style="text-align:center;">Dejanos tu mensaje!</h3>
+
   
       <form action="#" method="post" style="max-width: 600px; margin: auto;">
         <label for="nombre">Nombre</label>
@@ -48,5 +112,36 @@
         <button type="submit" style="width: 100%; background-color: #333; color: white; padding: 15px; font-size: 16px; border: none;">Enviar</button>
       </form>
     </main>
+    <br> <br>
     
+    <footer> 
+      <div class="pie">
+  
+        <a href="https://www.instagram.com/blowupdanzasurbanas" target="_blank" style="text-decoration: none; color: inherit;">
+          <i class="fa fa-instagram"></i>
+       @blowupdanzasurbanas</a> <br> 
+  
+    <a href="https://g.co/kgs/kjq7ZRL" target="_blank" style="text-decoration: none; color: inherit;">
+      <i class="fa fa-map-marker"></i>
+    4082, Villa Martelli, Provincia de Buenos Aires  </a><br>
+  
+   <i class="fa fa-envelope-o" aria-hidden="true"></i> 
+   blowupdanzasurbanas@gmail.com 
+  
+    <br>
+    <i class="fa fa-user-o" aria-hidden="true"></i>
+  Solana Negrussi<br>
+  </div>
+  </span> 
+   </footer>
+  <!-- aca va el script para el botón hamburguesa - esto usa JavaScript -->
+  <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+      }
+    </script>
+    </body>
+  
+    </html>
 

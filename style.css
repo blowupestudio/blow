@@ -2,21 +2,61 @@ body {background-color: rgb(113, 163, 217); font-family: 'Times New Roman', Time
 header{background-color: black(255, 192, 237); color: black; height: 80px; text-align: left} 
 main{background-color:rgb(113, 163, 217); padding:0px 80px;} 
 footer{background-color: black; color: rgb(113, 163, 217); padding: 80px;}
-.logo {width: 200px} 
+.logo {
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.logo:hover {
+  width: 220px;
+}
 .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); gap: 5px; width: 400px; height: 400px; } 
 .grid-item { border: 1px solid black; } 
-.cajacontenedora{display: flex; justify-content: center;}
-.caja  {
+.cajacontenedora {
+  display: flex;
+  justify-content: center;
+}
+
+.caja {
   width: 30%;
-  -webkit-justify-content: center;
+  justify-content: center;
   border-radius: 20px;
   margin: 10px;
   overflow: hidden;
 }
-.caja img{width: 90%; height: 90%;border-radius: 10px;}
-.staf {width: 95%; border-radius: 20px;}
+
+.caja img {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+
+  /* Para el efecto de hover */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.caja img:hover {
+  transform: scale(1.05); /* Aumenta un 5% aproximadamente (equivale a 10px aprox. si es grande la imagen) */
+}
+
+
+.staf {
+  width: 95%;
+  border-radius: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .textocentrado{width:100%; text-align: center !important}
-.centrado{width:100%; text-align: center; color: rgb(19, 34, 77); text-transform: uppercase; font-weight: bold;font-size: xx-large; margin-top: 30px}
+.centrado{width:100%; text-align: center; color: rgb(15, 29, 65); font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-transform: uppercase; font-weight: bold;font-size: xx-large; margin-top: 30px}
 a{color: azure;}
 a:visited{color: rgb(222, 223, 223);}
 a:hover{color: rgb(160, 177, 195);}
@@ -35,42 +75,51 @@ ul {
 .contacto:hover {font-size: 25px;padding: 10px 20px; background-color: rgb(113, 163, 217);border-radius: 8px; margin-top: 10px; cursor: pointer;}
 .pie {font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
+/* Sección de clases */
+.clases {text-align: center}
+
 /* Sección de precios */
 .precios {
-  text-align: center; /* Centra el título */
-  margin: 20px; /* Espaciado externo */
+  text-align: center;
+  margin: 20px;
 }
 
 .contenedor-precios {
   display: flex;
-  flex-direction: column; /* Organiza las imágenes en dos filas */
-  align-items: center; /* Centra los elementos */
-  gap: 20px; /* Espacio entre filas */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .top-images, .bottom-images {
-  display: flex; /* Permite que las imágenes estén en fila */
-  justify-content: center; /* Centra las imágenes */
-  gap: 20px; /* Espacio entre imágenes */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.top-images img {
-  width: 70%; /* Tamaño ajustable de las imágenes */
-  max-width: 400px; /* Tamaño máximo */
-  border-radius: 20px; /* Bordes redondeados */
-  
-}
+/* Animación común para ambas filas de imágenes */
+.top-images img,
 .bottom-images img {
-  width: 70%; /* Tamaño ajustable de las imágenes */
-  max-width: 500px; /* Tamaño máximo */
-  border-radius: 20px; /* Bordes redondeados */
+  width: 70%;
+  max-width: 500px;
+  border-radius: 20px;
+  
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
-/* SECCION FORMACION */
+/* Definición de la animación */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
  /* Sección Formaciones */
 .formaciones {
   text-align: center;
   padding: 20px;
+  margin-top: 20px
 }
 
 .video-container {
@@ -79,6 +128,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -50px;
 }
 
 .video-container iframe {
@@ -90,15 +140,23 @@ ul {
 .botones-formacion {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Espacio entre los botones */
+  gap: 30px; /* Espacio entre los botones */
   margin-top: 20px;
 }
 
 .botones-formacion a img {
   width: 100%;
-  max-width:400px;
+  max-width: 400px;
   border-radius: 10px;
+
+  /* Agregamos la transición y efecto */
+  transition: transform 0.3s ease;
 }
+
+.botones-formacion a img:hover {
+  transform: scale(1.05);
+}
+
 
 
 
@@ -193,5 +251,147 @@ ul {
 
   .top-images img, .bottom-images img {
       width: 100%; /* Ajusta el tamaño para móviles */
+  }
+}
+/* TESTIMONIOS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 33.3333%;
+  padding: 10px;
+}
+
+.slide-content {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 20px 10px;
+  border-radius: 20px;
+  min-height: 180px;
+
+  opacity: 0;
+  animation: fadeInTestimonio 1s ease forwards;
+}
+
+/* Aplica fade-in a las imágenes también */
+.slide-content img {
+  max-height: 200px;
+  border-radius: 20px;
+  opacity: 0;
+  animation: fadeInTestimonio 1s ease forwards;
+}
+
+/* Definición de animación */
+@keyframes fadeInTestimonio {
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: white;
+  opacity: 0.5;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.fa {
+  color: rgb(196, 226, 251);
+}
+
+
+@media (max-width: 768px) {
+  .arrow.left {
+  display: none;
+}
+
+.arrow.right {
+  display: none;
+}
+
+}
+/* ✅ Media query para celulares (pantallas menores a 768px) formacion */
+@media (max-width: 768px) {
+  .video-container {
+    height: auto;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .botones-formacion {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .botones-formacion a img {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+/* ✅ Media query para pantallas chicas testimonios */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 100%; /* Cada slide ocupa el 100% del ancho */
+    padding: 5px;
+  }
+
+  .slide-content {
+    font-size: 0.9rem;
+    padding: 15px 8px;
+    min-height: auto;
+  }
+
+  .slide-content img {
+    max-width: 90%;
+    max-height: 150px;
+  }
+
+  .arrow {
+    font-size: 18px;
+    padding: 8px 10px;
   }
 }
