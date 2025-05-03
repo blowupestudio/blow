@@ -5,33 +5,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>Raw Basic</title>
+   <title>Blow up danzas urbanas</title>
    <link rel="stylesheet" href="style.css">
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
+<body>
 <body>
 
   <header>
     <a href="index.html"><img class="logo" src="imagenes/blow.PNG"></a>
-    <div class="secciones" ></div>
-    <ul>
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+    </button>
+    <ul class="nav-links"> 
     <li><a href="clases.html">CLASES</a></li>
     <li><a href="precios.html">PRECIOS</a></li>
     <li><a href="formacion.html">FORMACION</a></li>
     <li><a href="testimonios.html">TESTIMONIOS</a></li>
     <li><a href="https://wa.me/5491140302577" target="_blank">CONTACTO</a></li>
-
-  </ul>
+    </ul>
   </header>
   <main>
     <section class="formaciones"> <!-- Sección de formaciones -->
         <h1>FORMACIONES</h1> <!-- Título centrado debajo del encabezado -->
 
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/J5MGAQAQoMs?si=DQWqTR3zmChKYORA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
+          <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/J5MGAQAQoMs?autoplay=1&mute=1" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="autoplay; encrypted-media; clipboard-write; accelerometer; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+          </iframe>
+      </div>
+      
         <div class="botones-formacion">
             <a href="https://drive.google.com/file/d/14sdJ2btG4T20N6l7_q6pEqSVgizmK29V/view?usp=sharing"><img src="imagenes/TRAINING.JPEG" alt="Botón 1"></a>
             <a href="https://drive.google.com/file/d/1IkbqmPRhp4tbc9WO9IyQjWlRt6QTJ7H-/view?usp=sharing"><img src="imagenes/SCHOOL.JPEG" alt="Botón 2"></a>
@@ -39,14 +50,36 @@
     </section>
 </main>
 
-  <footer> 
-    <div class="pie">
-      <a href="https://www.instagram.com/blowupdanzasurbanas" target="_blank" style="text-decoration: none; color: inherit;">
-        <i class="fa fa-instagram"></i>
-      </a>@blowupdanzasurbanas <br>
-  blowupdanzasurbanas@gmail.com <br>
-  Laprida 4082, Villa Martelli, Provincia de Buenos Aires  <br>
-  Solana Negrussi<br>
+<br>
+
+
+<footer> 
+  <div class="pie">
+
+    <a href="https://www.instagram.com/blowupdanzasurbanas" target="_blank" style="text-decoration: none; color: inherit;">
+      <i class="fa fa-instagram"></i>
+   @blowupdanzasurbanas</a> <br> 
+
+<a href="https://g.co/kgs/kjq7ZRL" target="_blank" style="text-decoration: none; color: inherit;">
+  <i class="fa fa-map-marker"></i>
+4082, Villa Martelli, Provincia de Buenos Aires  </a><br>
+
+<i class="fa fa-envelope-o" aria-hidden="true"></i> 
+blowupdanzasurbanas@gmail.com 
+
+<br>
+<i class="fa fa-user-o" aria-hidden="true"></i>
+Solana Negrussi<br>
 </div>
 </span> 
- </footer>
+</footer>
+<!-- aca va el script para el botón hamburguesa - esto usa JavaScript -->
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+</script>
+</body>
+
+</html>
