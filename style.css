@@ -337,16 +337,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
-  .arrow.left {
-  display: none;
-}
 
-.arrow.right {
-  display: none;
-}
-
-}
 /* ✅ Media query para celulares (pantallas menores a 768px) formacion */
 @media (max-width: 768px) {
   .video-container {
@@ -393,5 +384,11 @@ body {
   .arrow {
     font-size: 18px;
     padding: 8px 10px;
+  }
+}
+ /* pie */
+@media (max-width: 768px) {
+  footer {
+    font-size: 11px;
   }
 }
