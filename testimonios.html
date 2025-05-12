@@ -49,16 +49,32 @@
       </div>
       
       <script>
-        const track = document.getElementById('sliderTrack');
-        const totalSlides = 6;
-        const visibleSlides = 3;
-        const slideWidth = 100 / visibleSlides;
+        let track;
+        let totalSlides = 6;
+        let visibleSlides;
+        let slideWidth;
         let currentIndex = 0;
         let autoSlideInterval;
+      
+        function getVisibleSlides() {
+          return window.innerWidth < 768 ? 1 : 3; // Cambia "768" por el breakpoint que uses
+        }
+      
+        function updateSliderVars() {
+          visibleSlides = getVisibleSlides();
+          slideWidth = 100 / visibleSlides;
+          updateSlider();
+        }
       
         function updateSlider() {
           const offset = -(currentIndex * slideWidth);
           track.style.transform = `translateX(${offset}%)`;
+      
+          // Actualizar ancho de cada slide dinámicamente
+          const slides = track.children;
+          for (let slide of slides) {
+            slide.style.flex = `0 0 ${slideWidth}%`;
+          }
         }
       
         function nextSlide() {
@@ -84,13 +100,17 @@
           startAutoSlide();
         }
       
-        // Inicializar
-        updateSlider();
-        startAutoSlide();
+        window.addEventListener('resize', () => {
+          updateSliderVars(); // Ajusta el número visible si cambia el tamaño de ventana
+        });
+      
+        document.addEventListener('DOMContentLoaded', () => {
+          track = document.getElementById('sliderTrack');
+          updateSliderVars();
+          startAutoSlide();
+        });
       </script>
-
-
-
+      
       <h3 style="text-align:center;">Dejanos tu mensaje!</h3>
 
   

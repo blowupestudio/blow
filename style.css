@@ -189,7 +189,7 @@ ul {
   display: block;}
 
   .centrado {
-    font-size: large;
+    font-size: medium;
     margin-bottom: 30px;}
 
   .staf {
@@ -213,6 +213,7 @@ ul {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    position: fixed;
   }
 
   .nav-links {
@@ -225,10 +226,18 @@ ul {
 
   .nav-links.active {
     display: flex;
+    position: fixed;
+    padding: 20px;
+    background-color: rgba(2, 2, 58, 0.5);
+    z-index: 9999;
+    border-radius: 20px;
+    left: 50%;
+    margin-left: -80px;
+    max-width:160px;
   }
 }
 
-@media (max-width: 768px) { /* Aplica cambios en pantallas pequeñas PRECIOS */
+@media (max-width: 768px) { /* PRECIOS */
   .contenedor-precios {
       display: flex;
       flex-direction: column; /* Asegura que todas las imágenes estén en una sola columna */
@@ -275,11 +284,13 @@ body {
 .slider-track {
   display: flex;
   transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .slide {
-  flex: 0 0 33.3333%;
-  padding: 10px;
+box-sizing: border-box;  
+padding: 1em;
+text-align: center;
 }
 
 .slide-content {
@@ -388,7 +399,8 @@ body {
 }
  /* pie */
 @media (max-width: 768px) {
-  footer {
-    font-size: 11px;
+  footer { text-align: left;
+    font-size: 10px;
+    padding: 15%;
   }
 }
