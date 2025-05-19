@@ -114,7 +114,7 @@
       <h3 style="text-align:center;">Dejanos tu mensaje!</h3>
 
   
-      <form action="#" method="post" style="max-width: 600px; margin: auto;">
+      <form id="miFormulario" action="respuesta.html" method="get" style="max-width: 600px; margin: auto;">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" placeholder="ej.: María Perez" required style="width: 100%; padding: 10px; margin-bottom: 20px;">
   
@@ -131,9 +131,16 @@
   
         <button type="submit" style="width: 100%; background-color: #333; color: white; padding: 15px; font-size: 16px; border: none;">Enviar</button>
       </form>
+      <script>
+        document.getElementById('miFormulario').addEventListener('submit', function(event) {
+          alert('¡Gracias por tu respuesta!');
+          // El formulario se enviará normalmente después del alert
+        });
+      </script>
     </main>
     <br> <br>
-    
+    <iframe src="https://rawbasic.github.io/Anuncio/Anuncio.html" class="anuncio" frameborder="0" scrolling="no"></iframe>
+    <br>
     <footer> 
       <div class="pie">
   

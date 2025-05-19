@@ -157,6 +157,14 @@ ul {
   transform: scale(1.05);
 }
 
+.anuncio {
+    width: 728px;
+    height: 90px;
+    display: block;
+    margin: auto;
+    transform: translateX(-30px); /* Ajustá este valor a ojo */
+  }
+  
 
 
 
@@ -396,6 +404,15 @@ text-align: center;
     font-size: 18px;
     padding: 8px 10px;
   }
+
+  .anuncio {
+    width: 300px;
+    height: 600px;
+    display: block;
+    margin: auto;
+    overflow-y: hidden;
+  }
+  
 }
  /* pie */
 @media (max-width: 768px) {
@@ -403,4 +420,41 @@ text-align: center;
     font-size: 10px;
     padding: 15%;
   }
+}
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  margin: 10% auto;
+  padding: 20px;
+  background: rgb(0, 0, 0);
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.popup-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: aliceblue;
 }
