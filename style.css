@@ -166,8 +166,6 @@ ul {
   }
   
 
-
-
 /* RESPONSIVE PARA CELULARES */
 @media (max-width: 768px) {
   header {
@@ -420,6 +418,8 @@ text-align: center;
     font-size: 10px;
     padding: 15%;
   }
+
+   /* GALERIA */
 }
 .modal {
   position: fixed;
@@ -433,12 +433,20 @@ text-align: center;
 }
 
 .modal-content {
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 20px;
   background: rgb(0, 0, 0);
-  width: 80%;
-  max-width: 300px;
+  width: 40%;
+  max-width: 500px; 
   text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.modal-content img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -452,9 +460,90 @@ text-align: center;
   border-radius: 5px;
 }
 
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+
 .close {
   float: right;
   font-size: 28px;
   cursor: pointer;
   color: aliceblue;
+}
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    max-width: 90%;
+    margin: 20% auto;
+    padding: 15px;
+  }
+
+  .popup-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .nav-button {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .close {
+    font-size: 24px;
+    top: 5px;
+    right: 10px;
+  }
 }

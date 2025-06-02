@@ -35,7 +35,10 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <img id="popupImage" src="" alt="" style="width:100%;">
-    <a id="popupLink" href="#" target="_blank" class="popup-button">Ir al enlace</a>
+    <a id="popupLink" href="#" target="_blank" class="popup-button">Ver video</a>
+    <button id="prevBtn" class="nav-button">←</button>
+<button id="nextBtn" class="nav-button">→</button>
+
   </div>
 </div>
 
@@ -122,7 +125,51 @@ Solana Negrussi<br>
       document.getElementById('popupModal').style.display = 'none';
     }
   });
-  </script>
+
+  const modal = document.getElementById("popupModal");
+  const popupImage = document.getElementById("popupImage");
+  const popupLink = document.getElementById("popupLink");
+  const closeBtn = document.querySelector(".close");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  const triggers = Array.from(document.querySelectorAll(".popup-trigger"));
+  let currentIndex = 0;
+
+  function showModal(index) {
+    const img = triggers[index];
+    popupImage.src = img.src;
+    popupLink.href = img.getAttribute("data-link");
+    modal.style.display = "block";
+    currentIndex = index;
+  }
+
+  triggers.forEach((img, index) => {
+    img.addEventListener("click", () => showModal(index));
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  nextBtn.onclick = function() {
+    currentIndex = (currentIndex + 1) % triggers.length;
+    showModal(currentIndex);
+  }
+
+  prevBtn.onclick = function() {
+    currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+    showModal(currentIndex);
+  }
+
+  // Cierra el modal si se hace clic fuera del contenido
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
   
 </body>
 
